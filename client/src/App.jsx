@@ -25,7 +25,7 @@ function App() {
 
   const fetchRegistrations = async () => {
     try {
-      const response = await fetch('http://localhost:5000/api/registrations')
+      const response = await fetch('https://student-registration-jvg8.onrender.com/api/registrations')
       const data = await response.json()
       setRegistrations(data)
     } catch (error) {
@@ -116,7 +116,7 @@ function StudentRegistrationPage({ onRefresh }) {
         selectedCompanies: Number(form.backlogs) === 0 ? selectedCompanies : [],
       }
 
-      const response = await fetch('http://localhost:5000/api/register', {
+      const response = await fetch('https://student-registration-jvg8.onrender.com/api/register', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(payload),
